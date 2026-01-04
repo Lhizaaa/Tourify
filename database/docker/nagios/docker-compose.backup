@@ -1,0 +1,13 @@
+services:
+  nagios:
+    image: jasonrivers/nagios
+    container_name: nagios_container
+    ports:
+      - "8082:80"
+      - "5666:5666"
+    networks:
+      - custom_network
+
+networks:
+  custom_network:
+    name: appsjk

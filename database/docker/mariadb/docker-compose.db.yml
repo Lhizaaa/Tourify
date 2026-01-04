@@ -1,0 +1,21 @@
+services:
+  db:
+    image: mariadb:11
+    container_name: dbserver
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass123
+      MYSQL_DATABASE: appdb
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: secret123
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - tripify
+
+volumes:
+  db_data:
+
+networks:
+  tripify:
+    external: true
