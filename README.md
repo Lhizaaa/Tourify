@@ -1,10 +1,8 @@
-# TourifyV1
+# TourifyV2
 
 **Tourism Booking & Management System - Advanced Web Application**
 
 Sistem manajemen pariwisata terpadu dengan fitur booking destinasi, manajemen tour guide, sistem pembayaran, dan panel admin yang komprehensif. Platform ini dirancang untuk memudahkan wisatawan dalam menemukan dan memesan tour packages, serta membantu operator pariwisata mengelola destinasi, guide, dan booking dengan efisien.
-
-TourifyV2 adalah refactoring lengkap dari TourifyV1 dengan arsitektur yang lebih terstruktur, mengikuti best practices PSR-4, dan peningkatan signifikan dalam kualitas kode, keamanan, dan performa.
 
 ## 🌟 Fitur Utama
 
@@ -621,7 +619,6 @@ Project ini tersedia di bawah lisensi MIT. Lihat LICENSE file untuk detail.
 
 **TourifyV2** - Bringing Tourism Booking to the Next Level 🚀
 
-**Dikembangkan dengan ❤️ untuk pariwisata Indonesia**
-
 *Last Updated: January 2026*
+
 
