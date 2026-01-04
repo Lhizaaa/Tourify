@@ -543,19 +543,6 @@ Lihat masing-masing file di `api/v1/` untuk detail parameter & response.
 **Database:** MySQL 5.7+  
 **Development Period:** 2025-2026  
 
-### Key Improvements (V2 vs V1)
-
-| Aspek | V1 | V2 |
-|-------|-----|------|
-| Code Structure | Root-level chaos | PSR-4 organized |
-| Architecture | Procedural | MVC-inspired |
-| Database | MySQLi | PDO |
-| API Versioning | None | /api/v1/ |
-| Error Handling | Basic | Comprehensive |
-| Documentation | Minimal | Extensive |
-| Testing | None | 87-test checklist |
-| Code Quality | Low | High |
-
 ### Goals & Achievements
 
 ✅ **Complete Restructuring** - Transformasi dari chaos ke organized structure  
@@ -616,9 +603,9 @@ Project ini tersedia di bawah lisensi MIT. Lihat LICENSE file untuk detail.
 - [ ] Machine learning recommendations
 
 ---
+Team & Contact
+Untuk pertanyaan mengenai project ini, silakan hubungi melalui GitHub repository atau buat issue.
 
 **TourifyV2** - Bringing Tourism Booking to the Next Level 🚀
-
-*Last Updated: January 2026*
 
 
