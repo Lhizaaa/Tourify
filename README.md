@@ -603,9 +603,10 @@ Project ini tersedia di bawah lisensi MIT. Lihat LICENSE file untuk detail.
 - [ ] Machine learning recommendations
 
 ---
-Team & Contact
-Untuk pertanyaan mengenai project ini, silakan hubungi melalui GitHub repository atau buat issue.
+## Team & Contact
+Untuk pertanyaan, silakan hubungi melalui GitHub repository / buat issue
 
 **TourifyV2** - Bringing Tourism Booking to the Next Level 🚀
+
 
 
