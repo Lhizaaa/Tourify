@@ -1,4 +1,4 @@
-# TourifyV2
+# TourifyV1
 
 **Tourism Booking & Management System - Advanced Web Application**
 
@@ -624,3 +624,4 @@ Project ini tersedia di bawah lisensi MIT. Lihat LICENSE file untuk detail.
 **Dikembangkan dengan ❤️ untuk pariwisata Indonesia**
 
 *Last Updated: January 2026*
+
