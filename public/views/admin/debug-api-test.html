@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>API Debug</title>
+    <style>
+      body {
+        font-family: Arial;
+        margin: 20px;
+        background: #f5f5f5;
+      }
+      .container {
+        max-width: 800px;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      pre {
+        background: #222;
+        color: #0f0;
+        padding: 15px;
+        overflow: auto;
+        border-radius: 4px;
+      }
+      button {
+        padding: 10px 15px;
+        cursor: pointer;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>API Debug Test</h1>
+
+      <button onclick="testDebugAPI()">Test Debug API (Simple)</button>
+      <button onclick="testFullAPI()">Test Full API (Complex)</button>
+      <button onclick="clearResult()">Clear</button>
+
+      <div id="result"></div>
+    </div>
+
+    <script>
+      function testDebugAPI() {
+        document.getElementById("result").innerHTML = "<p>Loading...</p>";
+
+        fetch("./api/destinations-debug.php")
+          .then((r) => {
+            console.log("Status:", r.status);
+            return r.json();
+          })
+          .then((data) => {
+            console.log("Response:", data);
+            let html = "<h2>Debug API Response</h2>";
+            if (data.success) {
+              html += '<p style="color: green;">✓ SUCCESS</p>';
+            } else {
+              html += '<p style="color: red;">✗ ERROR: ' + data.error + "</p>";
+            }
+            html += "<pre>" + JSON.stringify(data, null, 2) + "</pre>";
+            document.getElementById("result").innerHTML = html;
+          })
+          .catch((err) => {
+            console.error("Error:", err);
+            document.getElementById("result").innerHTML =
+              '<p style="color: red;">✗ Fetch Error: ' + err.message + "</p>";
+          });
+      }
+
+      function testFullAPI() {
+        document.getElementById("result").innerHTML = "<p>Loading...</p>";
+
+        fetch("./api/destinations.php?action=list")
+          .then((r) => {
+            console.log("Status:", r.status);
+            return r.json();
+          })
+          .then((data) => {
+            console.log("Response:", data);
+            let html = "<h2>Full API Response</h2>";
+            if (data && data.success) {
+              html += '<p style="color: green;">✓ SUCCESS</p>';
+            } else {
+              html += '<p style="color: red;">✗ ERROR</p>';
+            }
+            html +=
+              "<pre>" +
+              JSON.stringify(data, null, 2).substring(0, 1000) +
+              "</pre>";
+            document.getElementById("result").innerHTML = html;
+          })
+          .catch((err) => {
+            console.error("Error:", err);
+            document.getElementById("result").innerHTML =
+              '<p style="color: red;">✗ Fetch Error: ' + err.message + "</p>";
+          });
+      }
+
+      function clearResult() {
+        document.getElementById("result").innerHTML = "";
+      }
+    </script>
+  </body>
+</html>

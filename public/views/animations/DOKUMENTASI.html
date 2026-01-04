@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumentasi Animasi Tourify</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 2rem 0;
+        }
+        .doc-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .doc-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: slideInDown 0.8s ease-out;
+        }
+        .doc-header h1 {
+            color: #1e40af;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .doc-header p {
+            color: #6b7280;
+            font-size: 1.1rem;
+        }
+        .animation-section {
+            margin-bottom: 3rem;
+            animation: fadeIn 0.8s ease-out;
+        }
+        .animation-section h2 {
+            color: #1e40af;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .animation-list {
+            display: grid;
+            gap: 1.5rem;
+        }
+        .animation-item {
+            background: #f9fafb;
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            border-radius: 8px;
+            animation: slideInLeft 0.6s ease-out;
+            transition: all 0.3s ease;
+        }
+        .animation-item:hover {
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.1);
+            transform: translateX(5px);
+        }
+        .animation-name {
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        .animation-description {
+            color: #6b7280;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .animation-elements {
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid #e5e7eb;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+        .demo-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 2rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .feature-box {
+            background: white;
+            border: 2px solid #e5e7eb;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            animation: scaleIn 0.6s ease-out;
+            transition: all 0.3s ease;
+        }
+        .feature-box:hover {
+            border-color: #3b82f6;
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px rgba(30, 64, 175, 0.15);
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #3b82f6;
+            margin-bottom: 1rem;
+            animation: bounce 1s ease infinite;
+        }
+        .feature-box h3 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+        .feature-box p {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        .cta-section {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e5e7eb;
+        }
+        .cta-section a {
+            display: inline-block;
+            background: #1e40af;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .cta-section a:hover {
+            background: #1e3a8a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+        }
+        .tag {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="doc-container">
+        <div class="doc-header">
+            <h1>🎨 Dokumentasi Animasi Tourify</h1>
+            <p>Koleksi lengkap animasi modern untuk website Banjarnegara E-Tourism</p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-box">
+                <div class="feature-icon"><i class="fas fa-magic"></i></div>
+                <h3>Smooth Transitions</h3>
+                <p>Transisi halus untuk semua elemen interaktif</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                <h3>Performant</h3>
+                <p>Dioptimalkan untuk performa maksimal</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>Responsive</h3>
+                <p>Bekerja sempurna di semua perangkat</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon"><i class="fas fa-palette"></i></div>
+                <h3>Modern Design</h3>
+                <p>Design yang contemporary dan fresh</p>
+            </div>
+        </div>
+
+        <!-- Animasi Hero & Navigation -->
+        <div class="animation-section">
+            <h2><i class="fas fa-arrow-up"></i> Animasi Hero & Navigasi</h2>
+            <div class="animation-list">
+                <div class="animation-item">
+                    <div class="animation-name">slideInUp</div>
+                    <div class="animation-description">Elemen slide masuk dari bawah dengan fade effect</div>
+                    <div class="animation-elements">
+                        <span class="tag">Navbar</span>
+                        <span class="tag">Booking Card</span>
+                        <span class="tag">Cards</span>
+                    </div>
+                </div>
+                <div class="animation-item">
+                    <div class="animation-name">fadeIn</div>
+                    <div class="animation-description">Fade effect yang smooth untuk tampilan awal</div>
+                    <div class="animation-elements">
+                        <span class="tag">Hero Content</span>
+                        <span class="tag">Modals</span>
+                        <span class="tag">Images</span>
+                    </div>
+                </div>
+                <div class="animation-item">
+                    <div class="animation-name">slideInDown</div>
+                    <div class="animation-description">Judul hero slide masuk dari atas</div>
+                    <div class="animation-elements">
+                        <span class="tag">Hero Title</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Animasi Hover Effects -->
+        <div class="animation-section">
+            <h2><i class="fas fa-hand-pointer"></i> Animasi Hover Effects</h2>
+            <div class="animation-list">
+                <div class="animation-item">
+                    <div class="animation-name">translateY + Scale</div>
+                    <div class="animation-description">Elemen naik dan membesar saat hover</div>
+                    <div class="animation-elements">
+                        <span class="tag">Destination Cards</span>
+                        <span class="tag">Feature Cards</span>
+                        <span class="tag">Buttons</span>
+                    </div>
+                </div>
+                <div class="animation-item">
+                    <div class="animation-name">Image Zoom</div>
+                    <div class="animation-description">Gambar membesar smooth saat hover</div>
+                    <div class="animation-elements">
+                        <span class="tag">Destination Images</span>
+                    </div>
+                </div>
+                <div class="animation-item">
+                    <div class="animation-name">Icon Transform</div>
+                    <div class="animation-description">Icon rotate dan scale saat hover</div>
+                    <div class="animation-elements">
+                        <span class="tag">Feature Icons</span>
+                        <span class="tag">Social Links</span>
+                    </div>
+                </div>
+                <div class="animation-item">
+                    <div class="animation-name">Glow Effect</div>
+                    <div class="animation-description">Box shadow bercahaya pada elemen aktif</div>
+                    <div class="animation-elements">
+                        <span class="tag">Feature Icons</span>
+                        <span class="tag">Buttons</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Animasi Form & Input -->
+        <div class="animation-section">
+            <h2><i class="fas fa-keyboard"></i> Animasi Form & Input</h2>
+            <div class="animation-list">
+                <div class="animation-item">
+                    <div class="animation-name">Focus States</div>
+                    <div class="animation-description">Input field glow dan naik saat fokus</div>
+                    <div class="animation-elements">
+                        <span class="tag">Input Fields</span>
+                        <span class="tag">Select</span>
+                        <span class="tag">Textarea</span>
+                    </div>
+                </div>
+                <div class="animation-item">
+                    <div class="animation-name">Payment Method Selection</div>
+                    <div class="animation-description">Payment method scale dan highlight saat dipilih</div>
+                    <div class="animation-elements">
+                        <span class="tag">Payment Methods</span>
+                    </div>
+                </div>
+                <div class="animation-item">
+                    <div class="animation-name">Step Indicators</div>
+                    <div class="animation-description">Step number pulse saat aktif</div>
+                    <div class="animation-elements">
+                        <span class="tag">Booking Steps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Animasi Status & Feedback -->
+        <div class="animation-section">
+            <h2><i class="fas fa-bell"></i> Animasi Status & Feedback</h2>
+            <div class="animation-list">
+                <div class="animation-item">
+                    <div class="animation-name">Pulse Animation</div>
+                    <div class="animation-description">Efek pulse untuk menarik perhatian</div>
+                    <div class="animation-elements">
+                        <span class="tag">Booking Status</span>
+                        <span class="tag">Active Elements</span>
+                    </div>
+                </div>
+                <div class="animation-item">
+                    <div class="animation-name">Success Bounce</div>
+                    <div class="animation-description">Bounce effect untuk konfirmasi berhasil</div>
+                    <div class="animation-elements">
+                        <span class="tag">Confirmation</span>
+                        <span class="tag">Success Icons</span>
+                    </div>
+                </div>
+                <div class="animation-item">
+                    <div class="animation-name">Star Rating Animation</div>
+                    <div class="animation-description">Star scale dan rotate saat hover</div>
+                    <div class="animation-elements">
+                        <span class="tag">Star Ratings</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Animasi Review & Content -->
+        <div class="animation-section">
+            <h2><i class="fas fa-comment"></i> Animasi Review & Content</h2>
+            <div class="animation-list">
+                <div class="animation-item">
+                    <div class="animation-name">slideInLeft</div>
+                    <div class="animation-description">Review items slide masuk dari kiri</div>
+                    <div class="animation-elements">
+                        <span class="tag">Review Items</span>
+                        <span class="tag">Booking Items</span>
+                    </div>
+                </div>
+                <div class="animation-item">
+                    <div class="animation-name">Content Translate</div>
+                    <div class="animation-description">Konten bergeser halus saat hover</div>
+                    <div class="animation-elements">
+                        <span class="tag">Profile Items</span>
+                        <span class="tag">List Items</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Animasi Tambahan -->
+        <div class="animation-section">
+            <h2><i class="fas fa-star"></i> Animasi Khusus (animations.css)</h2>
+            <div class="animation-list">
+                <div class="animation-item">
+                    <div class="animation-name">Loading Spinner</div>
+                    <div class="animation-description">Animasi loading yang smooth dan modern</div>
+                </div>
+                <div class="animation-item">
+                    <div class="animation-name">Skeleton Loading</div>
+                    <div class="animation-description">Shimmer effect untuk loading placeholder</div>
+                </div>
+                <div class="animation-item">
+                    <div class="animation-name">Modal Animations</div>
+                    <div class="animation-description">Modal scale in dengan backdrop fade</div>
+                </div>
+                <div class="animation-item">
+                    <div class="animation-name">Heartbeat & Swing</div>
+                    <div class="animation-description">Animasi attention-seeker untuk CTA</div>
+                </div>
+                <div class="animation-item">
+                    <div class="animation-name">Dropdown Open</div>
+                    <div class="animation-description">Dropdown menu smooth open animation</div>
+                </div>
+                <div class="animation-item">
+                    <div class="animation-name">Error Shake</div>
+                    <div class="animation-description">Shake effect untuk error feedback</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Demo Section -->
+        <div class="demo-box">
+            <h3><i class="fas fa-play-circle"></i> Semua Animasi Aktif!</h3>
+            <p>Animasi telah terintegrasi di seluruh website Tourify untuk pengalaman yang lebih modern dan engaging</p>
+        </div>
+
+        <!-- File Structure -->
+        <div class="animation-section">
+            <h2><i class="fas fa-file"></i> File & Integrasi</h2>
+            <div class="animation-list">
+                <div class="animation-item">
+                    <div class="animation-name">style.css</div>
+                    <div class="animation-description">Animasi dasar terintegrasi langsung dalam style.css utama</div>
+                </div>
+                <div class="animation-item">
+                    <div class="animation-name">animations.css</div>
+                    <div class="animation-description">File CSS terpisah dengan animasi-animasi tambahan dan utility classes</div>
+                </div>
+                <div class="animation-item">
+                    <div class="animation-name">Halaman yang Updated</div>
+                    <div class="animation-description">
+                        index.php, destinations.php, tour-guides.php, booking.php, itinerary.php, 
+                        profile.php, destination-detail.php, login.php - semua sudah link ke animations.css
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cara Menggunakan -->
+        <div class="animation-section">
+            <h2><i class="fas fa-graduation-cap"></i> Cara Menggunakan</h2>
+            <div class="animation-list">
+                <div class="animation-item">
+                    <div class="animation-name">Animasi Otomatis</div>
+                    <div class="animation-description">Animasi akan berjalan otomatis pada elemen yang sudah dikonfigurasi saat halaman dimuat</div>
+                </div>
+                <div class="animation-item">
+                    <div class="animation-name">Menambah Animasi Baru</div>
+                    <div class="animation-description">Tambahkan class seperti <code>.fade-slide-in</code>, <code>.zoom-in</code>, <code>.bounce</code> dll ke elemen HTML</div>
+                </div>
+                <div class="animation-item">
+                    <div class="animation-name">Custom Animasi</div>
+                    <div class="animation-description">Edit keyframes di animations.css untuk customize timing, delay, dan efek sesuai kebutuhan</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Lihat Animasi dalam Aksi</h2>
+            <p>Kunjungi halaman website untuk melihat semua animasi bekerja dengan sempurna</p>
+            <a href="index.php"><i class="fas fa-arrow-right"></i> Kembali ke Home</a>
+            <a href="destinations.php" style="margin-left: 1rem;"><i class="fas fa-compass"></i> Lihat Destinasi</a>
+        </div>
+    </div>
+</body>
+</html>

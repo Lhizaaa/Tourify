@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Destinations Manager Test</title>
+    <style>
+      body {
+        font-family: Arial;
+        margin: 20px;
+      }
+      .status {
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 4px;
+      }
+      .success {
+        background: #4caf50;
+        color: white;
+      }
+      .error {
+        background: #f44336;
+        color: white;
+      }
+      .info {
+        background: #2196f3;
+        color: white;
+      }
+      code {
+        background: #f5f5f5;
+        padding: 2px 4px;
+      }
+      pre {
+        background: #f5f5f5;
+        padding: 10px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Destinations Manager - Diagnostic Test</h1>
+
+    <h2>Checks:</h2>
+    <div id="checks"></div>
+
+    <h2>Log Output:</h2>
+    <pre
+      id="log"
+      style="height: 300px; overflow-y: auto; border: 1px solid #ccc"
+    ></pre>
+
+    <button onclick="runDiagnostics()">Run Diagnostics</button>
+
+    <script>
+      const logEl = document.getElementById("log");
+      const checksEl = document.getElementById("checks");
+
+      function log(msg, type = "info") {
+        const time = new Date().toLocaleTimeString();
+        const line = `[${time}] ${msg}\n`;
+        logEl.textContent += line;
+        logEl.scrollTop = logEl.scrollHeight;
+      }
+
+      function addCheck(name, passed, msg = "") {
+        const status = passed ? "success" : "error";
+        const icon = passed ? "✓" : "✗";
+        const div = document.createElement("div");
+        div.className = `status ${status}`;
+        div.textContent = `${icon} ${name}`;
+        if (msg) div.textContent += ` - ${msg}`;
+        checksEl.appendChild(div);
+      }
+
+      async function runDiagnostics() {
+        log("Starting diagnostics...", "info");
+        checksEl.innerHTML = "";
+
+        // Check 1: DOM Elements
+        log("Checking DOM elements...");
+        const destModule = document.getElementById("destinations-module");
+        addCheck("destinations-module element exists", !!destModule);
+
+        const destForm = document.getElementById("destinationForm");
+        addCheck("destinationForm element exists", !!destForm);
+
+        const destGrid = document.getElementById("destinationGrid");
+        addCheck("destinationGrid element exists", !!destGrid);
+
+        // Check 2: Session
+        log("Checking admin session...");
+        try {
+          const res = await fetch("../api/check-session.php");
+          const data = await res.json();
+          addCheck("Admin session active", data.authenticated);
+        } catch (err) {
+          log("❌ Error checking session: " + err.message);
+          addCheck("Admin session check", false, err.message);
+        }
+
+        // Check 3: API Endpoint
+        log("Testing API endpoint...");
+        try {
+          const baseUrl =
+            window.location.pathname.split("/admin/")[0] + "/admin";
+          const apiUrl = baseUrl + "/api/destinations.php?action=categories";
+          log("API URL: " + apiUrl);
+
+          const res = await fetch(apiUrl);
+          log(`API Response Status: ${res.status}`);
+
+          const data = await res.json();
+          addCheck("API endpoint reachable", res.ok, `Status ${res.status}`);
+          addCheck("API returns valid JSON", !!data);
+
+          if (data.error) {
+            log("API Error: " + data.error);
+            addCheck("API authentication", false, data.error);
+          } else if (data.success) {
+            const catCount = data.data ? data.data.length : 0;
+            log(`✓ Categories found: ${catCount}`);
+            addCheck(
+              "API returns categories",
+              catCount > 0,
+              `${catCount} categories`
+            );
+          }
+        } catch (err) {
+          log("❌ Error testing API: " + err.message);
+          addCheck("API endpoint test", false, err.message);
+        }
+
+        // Check 4: Script loading
+        log("Checking script loading...");
+        addCheck(
+          "destinationsManager object exists",
+          typeof window.destinationsManager !== "undefined"
+        );
+        addCheck(
+          "DestinationsManager class exists",
+          typeof DestinationsManager !== "undefined"
+        );
+
+        log("✓ Diagnostics complete");
+      }
+
+      // Auto-run on load
+      window.addEventListener("load", () => {
+        setTimeout(runDiagnostics, 500);
+      });
+    </script>
+  </body>
+</html>

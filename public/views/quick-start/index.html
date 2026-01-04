@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Start - Animasi Tourify</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideInUp 0.8s ease-out;
+        }
+        
+        h1 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            color: #6b7280;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .section {
+            margin-bottom: 2.5rem;
+        }
+        
+        h2 {
+            color: #1e40af;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 0.8rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .step {
+            background: #f9fafb;
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            animation: slideInUp 0.6s ease-out;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .step-title {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+        
+        .step-description {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+        
+        code {
+            background: #f3f4f6;
+            border: 1px solid #e5e7eb;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #d946ef;
+        }
+        
+        .file-box {
+            background: #eff6ff;
+            border: 2px solid #3b82f6;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .file-name {
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+        
+        .file-description {
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+        
+        .button-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        a {
+            display: inline-block;
+            padding: 0.85rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: #1e40af;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #1e3a8a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+        }
+        
+        .btn-secondary {
+            background: #e5e7eb;
+            color: #1f2937;
+        }
+        
+        .btn-secondary:hover {
+            background: #d1d5db;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .checklist {
+            background: #f0fdf4;
+            border-left: 4px solid #10b981;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: #1f2937;
+        }
+        
+        .checklist-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .checkbox-icon {
+            color: #10b981;
+            font-weight: 700;
+        }
+        
+        .info-box {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-box-title {
+            font-weight: 700;
+            color: #92400e;
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-box-content {
+            color: #78350f;
+            line-height: 1.6;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e5e7eb;
+            color: #6b7280;
+        }
+        
+        .footer p {
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 640px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.2rem;
+            }
+            
+            .button-group {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Quick Start Guide</h1>
+        <p class="subtitle">Panduan cepat menggunakan animasi di Tourify</p>
+        
+        <!-- File Overview -->
+        <div class="section">
+            <h2>📁 File yang Telah Ditambahkan</h2>
+            
+            <div class="file-box">
+                <div class="file-name">✨ animations.css</div>
+                <div class="file-description">
+                    File CSS berisi 85+ baris animasi khusus. Sudah di-link ke semua halaman utama.
+                </div>
+            </div>
+            
+            <div class="file-box">
+                <div class="file-name">📝 ANIMASI-DOKUMENTASI.html</div>
+                <div class="file-description">
+                    Halaman dokumentasi interaktif yang menampilkan semua animasi yang tersedia dengan preview.
+                </div>
+            </div>
+            
+            <div class="file-box">
+                <div class="file-name">📖 ANIMASI-README.md</div>
+                <div class="file-description">
+                    Dokumentasi lengkap dengan technical details, file modifications, dan usage guide.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Animated Pages -->
+        <div class="section">
+            <h2>🎯 Halaman yang Sudah Animasi</h2>
+            
+            <div class="checklist">
+                <div class="checklist-item">
+                    <span class="checkbox-icon">✓</span>
+                    <span>index.php - Hero animations + destination cards staggered</span>
+                </div>
+                <div class="checklist-item">
+                    <span class="checkbox-icon">✓</span>
+                    <span>destinations.php - Grid staggered animations</span>
+                </div>
+                <div class="checklist-item">
+                    <span class="checkbox-icon">✓</span>
+                    <span>tour-guides.php - Guide cards + avatar interactions</span>
+                </div>
+                <div class="checklist-item">
+                    <span class="checkbox-icon">✓</span>
+                    <span>booking.php - Form animations + payment method effects</span>
+                </div>
+                <div class="checklist-item">
+                    <span class="checkbox-icon">✓</span>
+                    <span>itinerary.php - Day cards + destination items</span>
+                </div>
+                <div class="checklist-item">
+                    <span class="checkbox-icon">✓</span>
+                    <span>profile.php - Navigation + booking items animations</span>
+                </div>
+                <div class="checklist-item">
+                    <span class="checkbox-icon">✓</span>
+                    <span>login.php - Form focus animations</span>
+                </div>
+                <div class="checklist-item">
+                    <span class="checkbox-icon">✓</span>
+                    <span>destination-detail.php - Image + review animations</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cara Melihat -->
+        <div class="section">
+            <h2>👀 Cara Melihat Animasi</h2>
+            
+            <div class="step">
+                <span class="step-number">1</span>
+                <div class="step-title">Buka Halaman Utama</div>
+                <div class="step-description">
+                    Kunjungi <code>index.php</code> dan perhatikan hero section yang smooth fade in, 
+                    kemudian destination cards yang muncul satu-satu (staggered effect).
+                </div>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">2</span>
+                <div class="step-title">Hover di Cards</div>
+                <div class="step-description">
+                    Arahkan mouse ke destination cards untuk melihat lift effect, image zoom, dan shadow enhancement.
+                </div>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">3</span>
+                <div class="step-title">Kunjungi Halaman Lain</div>
+                <div class="step-description">
+                    Jelajahi <code>destinations.php</code>, <code>tour-guides.php</code>, <code>booking.php</code> 
+                    untuk melihat animasi di berbagai konteks.
+                </div>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">4</span>
+                <div class="step-title">Lihat Dokumentasi Interaktif</div>
+                <div class="step-description">
+                    Buka <code>ANIMASI-DOKUMENTASI.html</code> untuk preview lengkap dan penjelasan semua animasi.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Key Features -->
+        <div class="section">
+            <h2>✨ Fitur Utama Animasi</h2>
+            
+            <div class="checklist">
+                <div class="checklist-item">
+                    <span class="checkbox-icon">✓</span>
+                    <span><strong>Smooth Entry</strong> - Fade in dan slide dari berbagai arah</span>
+                </div>
+                <div class="checklist-item">
+                    <span class="checkbox-icon">✓</span>
+                    <span><strong>Hover Effects</strong> - Cards lift, images zoom, icons rotate</span>
+                </div>
+                <div class="checklist-item">
+                    <span class="checkbox-icon">✓</span>
+                    <span><strong>Staggered Animation</strong> - Grid items muncul cascade effect</span>
+                </div>
+                <div class="checklist-item">
+                    <span class="checkbox-icon">✓</span>
+                    <span><strong>Focus States</strong> - Input glow saat fokus</span>
+                </div>
+                <div class="checklist-item">
+                    <span class="checkbox-icon">✓</span>
+                    <span><strong>Loading States</strong> - Spinner dan shimmer animations</span>
+                </div>
+                <div class="checklist-item">
+                    <span class="checkbox-icon">✓</span>
+                    <span><strong>Attention Seekers</strong> - Pulse, bounce, shake effects</span>
+                </div>
+                <div class="checklist-item">
+                    <span class="checkbox-icon">✓</span>
+                    <span><strong>Performance</strong> - GPU accelerated, 60 FPS optimized</span>
+                </div>
+                <div class="checklist-item">
+                    <span class="checkbox-icon">✓</span>
+                    <span><strong>Responsive</strong> - Bekerja sempurna di semua device</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tips -->
+        <div class="info-box">
+            <div class="info-box-title">💡 Tips Memaksimalkan Pengalaman</div>
+            <div class="info-box-content">
+                <p style="margin-bottom: 0.5rem;">• Gunakan browser modern (Chrome, Firefox, Safari, Edge)</p>
+                <p style="margin-bottom: 0.5rem;">• Perhatikan setiap detail saat hover atau interact</p>
+                <p style="margin-bottom: 0.5rem;">• Lihat cascade effect di halaman dengan banyak cards</p>
+                <p style="margin-bottom: 0.5rem;">• Coba submit form untuk melihat form animations</p>
+                <p>• Buka DevTools (F12) Performance tab untuk monitor FPS</p>
+            </div>
+        </div>
+        
+        <!-- Next Steps -->
+        <div class="section">
+            <h2>🎓 Langkah Berikutnya</h2>
+            
+            <div class="step">
+                <span class="step-number">1</span>
+                <div class="step-title">Baca Dokumentasi Lengkap</div>
+                <div class="step-description">
+                    Lihat <code>ANIMASI-README.md</code> untuk technical deep-dive dan semua modifications.
+                </div>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">2</span>
+                <div class="step-title">Customize Animasi</div>
+                <div class="step-description">
+                    Edit <code>style.css</code> dan <code>animations.css</code> untuk mengubah timing, 
+                    duration, atau efek sesuai preferensi.
+                </div>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">3</span>
+                <div class="step-title">Tambah Animasi Baru</div>
+                <div class="step-description">
+                    Gunakan existing keyframes atau buat yang baru. Gunakan utility classes dari animations.css.
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>📊 35+ Animasi telah ditambahkan ke Tourify</p>
+            <p style="font-size: 0.9rem; color: #9ca3af;">Selamat menikmati pengalaman visual yang lebih modern dan engaging!</p>
+        </div>
+        
+        <div class="button-group">
+            <a href="index.php" class="btn-primary">🏠 Lihat Halaman Utama</a>
+            <a href="ANIMASI-DOKUMENTASI.html" class="btn-secondary">📖 Baca Dokumentasi</a>
+        </div>
+    </div>
+</body>
+</html>

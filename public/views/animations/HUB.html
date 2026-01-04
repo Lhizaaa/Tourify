@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourify Animasi - Hub Dokumentasi</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem 0;
+        }
+        .doc-hub {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .hub-header {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+            animation: slideInDown 0.8s ease-out;
+        }
+        .hub-header h1 {
+            color: #1e40af;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .hub-header p {
+            color: #6b7280;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .hub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .hub-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            animation: slideInUp 0.6s ease-out;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+        .hub-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        .hub-card-icon {
+            font-size: 2.5rem;
+            color: #3b82f6;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .hub-card h2 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        .hub-card p {
+            color: #6b7280;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .hub-footer {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            animation: slideInUp 0.8s ease-out;
+        }
+        .hub-footer h3 {
+            color: #1e40af;
+            margin-bottom: 1rem;
+        }
+        .hub-footer p {
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+        }
+        .hub-button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .hub-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .hub-button-primary {
+            background: #1e40af;
+            color: white;
+        }
+        .hub-button-primary:hover {
+            background: #1e3a8a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+        }
+        .hub-button-secondary {
+            background: #e5e7eb;
+            color: #1f2937;
+        }
+        .hub-button-secondary:hover {
+            background: #d1d5db;
+            transform: translateY(-2px);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .stat-box {
+            background: #f0fdf4;
+            border-left: 4px solid #10b981;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            animation: slideInUp 0.5s ease-out;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e40af;
+        }
+        .stat-label {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        @media (max-width: 640px) {
+            .hub-header {
+                padding: 1.5rem;
+            }
+            .hub-header h1 {
+                font-size: 1.8rem;
+            }
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="doc-hub">
+        <div class="hub-header">
+            <h1>🎨 Tourify Animasi Hub</h1>
+            <p>Pusat dokumentasi lengkap untuk semua animasi yang telah ditambahkan ke website Tourify</p>
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-number">35+</div>
+                    <div class="stat-label">Animasi</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Halaman Updated</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">60+</div>
+                    <div class="stat-label">Baris Keyframes</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Modern</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hub-grid">
+            <!-- Card 1: Quick Start -->
+            <a href="QUICK-START.html" class="hub-card">
+                <span class="hub-card-icon"><i class="fas fa-rocket"></i></span>
+                <h2>🚀 Quick Start</h2>
+                <p>Panduan cepat untuk memulai menggunakan animasi. Perfect untuk yang ingin langsung melihat hasilnya!</p>
+            </a>
+
+            <!-- Card 2: Dokumentasi Interaktif -->
+            <a href="ANIMASI-DOKUMENTASI.html" class="hub-card">
+                <span class="hub-card-icon"><i class="fas fa-book"></i></span>
+                <h2>📖 Dokumentasi Lengkap</h2>
+                <p>Halaman interaktif dengan preview semua animasi, penjelasan detail, dan usage examples.</p>
+            </a>
+
+            <!-- Card 3: Panduan Teknis -->
+            <a href="ANIMASI-README.md" class="hub-card" target="_blank">
+                <span class="hub-card-icon"><i class="fas fa-code"></i></span>
+                <h2>⚙️ Technical Guide</h2>
+                <p>Dokumentasi teknis lengkap dengan file modifications, implementation details, dan troubleshooting.</p>
+            </a>
+
+            <!-- Card 4: Summary -->
+            <a href="ANIMASI-SUMMARY.txt" class="hub-card" target="_blank">
+                <span class="hub-card-icon"><i class="fas fa-align-left"></i></span>
+                <h2>📋 Summary Lengkap</h2>
+                <p>Summary detail dengan statistik, animasi breakdown, dan timeline implementasi.</p>
+            </a>
+
+            <!-- Card 5: Checklist -->
+            <a href="ANIMASI-CHECKLIST.txt" class="hub-card" target="_blank">
+                <span class="hub-card-icon"><i class="fas fa-check-circle"></i></span>
+                <h2>✅ Checklist</h2>
+                <p>Checklist lengkap semua animasi yang ditambahkan dengan highlight features dan tips.</p>
+            </a>
+
+            <!-- Card 6: File Reference -->
+            <div class="hub-card">
+                <span class="hub-card-icon"><i class="fas fa-folder"></i></span>
+                <h2>📁 File Reference</h2>
+                <p><strong>Main Files:</strong><br>
+                   • animations.css (85+ lines)<br>
+                   • style.css (60+ new lines)<br>
+                   • 8 PHP files updated
+                </p>
+            </div>
+        </div>
+
+        <div class="hub-footer">
+            <h3>🎯 Mulai Jelajahi Animasi</h3>
+            <p>Pilih panduan yang sesuai dengan kebutuhan Anda. Semua file dokumentasi tersedia dalam berbagai format untuk kemudahan akses.</p>
+            <div class="hub-button-group">
+                <a href="index.php" class="hub-button hub-button-primary">
+                    <i class="fas fa-home"></i> Lihat Halaman Utama
+                </a>
+                <a href="QUICK-START.html" class="hub-button hub-button-primary">
+                    <i class="fas fa-play"></i> Quick Start
+                </a>
+                <a href="destinations.php" class="hub-button hub-button-secondary">
+                    <i class="fas fa-compass"></i> Lihat Destinasi
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

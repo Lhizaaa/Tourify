@@ -1,0 +1,472 @@
+/* ===================================== */
+/* TOURIFY ANIMATIONS - CSS MODERN       */
+/* ===================================== */
+
+/* Loading Spinner Animation */
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Page Load Animation */
+@keyframes pageLoad {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Smooth Scroll Anchor Animation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Loader for async operations */
+.loader {
+  border: 4px solid rgba(30, 64, 175, 0.1);
+  border-top: 4px solid #1e40af;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spinner 1s linear infinite;
+}
+
+/* Skeleton Loading Animation */
+.skeleton-loading {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Text Loading Animation */
+.text-loading {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Page transition animations */
+.page-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Smooth transitions for all interactive elements */
+*:has(a, button, input, select, textarea) {
+  transition: all 0.3s ease;
+}
+
+/* Badge pulse animation */
+.badge-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Icon bounce animation */
+.icon-bounce {
+  animation: bounce 0.6s ease infinite;
+}
+
+/* Success checkmark animation */
+@keyframes checkmark {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.checkmark {
+  animation: checkmark 0.6s ease-out;
+}
+
+/* Error shake animation */
+@keyframes errorShake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+}
+
+.error-shake {
+  animation: errorShake 0.5s ease-in-out;
+}
+
+/* Slide Panel Animation */
+@keyframes slidePanel {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-panel {
+  animation: slidePanel 0.4s ease-out;
+}
+
+/* Dropdown Animation */
+@keyframes dropdownOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-open {
+  animation: dropdownOpen 0.3s ease-out;
+}
+
+/* Pulse Glow for active states */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(30, 64, 175, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(30, 64, 175, 0.6);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+/* Wave Animation */
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.wave {
+  animation: wave 0.5s ease-in-out infinite;
+}
+
+/* Fade and Slide Animation (Combined) */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-slide-in {
+  animation: fadeSlideIn 0.6s ease-out;
+}
+
+/* Flip Animation */
+@keyframes flip {
+  0% {
+    transform: perspective(400px) rotateY(0);
+  }
+  100% {
+    transform: perspective(400px) rotateY(360deg);
+  }
+}
+
+.flip {
+  animation: flip 0.8s ease-in-out;
+}
+
+/* Zoom In Animation */
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.zoom-in {
+  animation: zoomIn 0.4s ease-out;
+}
+
+/* Attention seeker - Jello */
+@keyframes jello {
+  0%, 100% {
+    transform: skewX(0deg) skewY(0deg);
+  }
+  30% {
+    transform: skewX(-12.5deg) skewY(-12.5deg);
+  }
+  60% {
+    transform: skewX(6.25deg) skewY(6.25deg);
+  }
+}
+
+.jello {
+  animation: jello 0.9s ease-in-out;
+}
+
+/* Heartbeat Animation */
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.3);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+.heartbeat {
+  animation: heartbeat 1.3s ease-in-out infinite;
+}
+
+/* Swing Animation */
+@keyframes swing {
+  20% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.swing {
+  animation: swing 1s ease-in-out;
+  transform-origin: top center;
+}
+
+/* Rubber Band Animation */
+@keyframes rubberBand {
+  0%, 100% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scaleX(0.75) scaleY(1.25);
+  }
+  40% {
+    transform: scaleX(1.25) scaleY(0.75);
+  }
+  50% {
+    transform: scaleX(0.85) scaleY(1.15);
+  }
+  65% {
+    transform: scaleX(1.05) scaleY(0.95);
+  }
+  75% {
+    transform: scaleX(0.95) scaleY(1.05);
+  }
+}
+
+.rubber-band {
+  animation: rubberBand 0.6s ease-in-out;
+}
+
+/* Gradient Shift for backgrounds */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-shift {
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+}
+
+/* Text Shadow Animation */
+@keyframes textShadowMove {
+  0% {
+    text-shadow: 0 0 0 rgba(30, 64, 175, 0);
+  }
+  100% {
+    text-shadow: 4px 4px 10px rgba(30, 64, 175, 0.3);
+  }
+}
+
+.text-shadow-animate {
+  animation: textShadowMove 0.6s ease-out;
+}
+
+/* Blur In Animation */
+@keyframes blurIn {
+  0% {
+    filter: blur(10px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.blur-in {
+  animation: blurIn 0.6s ease-out;
+}
+
+/* Focus Pulse */
+.focus-pulse:focus {
+  animation: pulseGlow 0.6s ease-out;
+}
+
+/* Smooth Shadow Transition */
+@keyframes shadowShift {
+  0% {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+  100% {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.shadow-shift:hover {
+  animation: shadowShift 0.8s ease-in-out infinite;
+}
+
+/* Border Glow Animation */
+@keyframes borderGlow {
+  0%, 100% {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 5px rgba(30, 64, 175, 0.3);
+  }
+  50% {
+    border-color: var(--secondary-blue);
+    box-shadow: 0 0 20px rgba(30, 64, 175, 0.6);
+  }
+}
+
+.border-glow {
+  animation: borderGlow 2s ease-in-out infinite;
+}
+/* ===== SCROLL ANIMATIONS ===== */
+
+/* Smooth scroll behavior */
+@supports (scroll-behavior: smooth) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Scroll fade in animation */
+@keyframes scrollFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll slide from left */
+@keyframes scrollSlideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scroll slide from right */
+@keyframes scrollSlideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Smooth scroll scale up */
+@keyframes scrollScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Apply scroll animations to elements */
+.scroll-fade-in {
+  animation: scrollFadeIn 0.6s ease-out forwards;
+}
+
+.scroll-slide-left {
+  animation: scrollSlideInLeft 0.6s ease-out forwards;
+}
+
+.scroll-slide-right {
+  animation: scrollSlideInRight 0.6s ease-out forwards;
+}
+
+.scroll-scale-in {
+  animation: scrollScaleIn 0.6s ease-out forwards;
+}
